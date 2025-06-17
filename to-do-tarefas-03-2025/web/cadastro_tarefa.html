@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Tarefa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="top-bar">
+    <h1>Cadastro de Tarefa</h1>
+    <div id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="cadastro_usuario.html">Cadastro de Usuário</a>
+      <a href="gerenciar_tarefas.html">Gerenciar Tarefas</a>
+    </div>
+  </div>
+
+  <div class="add-task">
+    <input type="text" id="descricaoTarefa" placeholder="Descrição">
+    <input type="text" id="setorTarefa" placeholder="Setor">
+    <select id="prioridadeTarefa">
+      <option value="">Prioridade</option>
+      <option value="baixa">Baixa</option>
+      <option value="média">Média</option>
+      <option value="alta">Alta</option>
+    </select>
+    <button onclick="cadastrarTarefa()">Cadastrar Tarefa</button>
+  </div>
+
+  <script>
+    function cadastrarTarefa() {
+      const desc = document.getElementById("descricaoTarefa").value.trim();
+      const setor = document.getElementById("setorTarefa").value.trim();
+      const prioridade = document.getElementById("prioridadeTarefa").value;
+
+      if (!desc || !setor || !prioridade) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+
+      document.getElementById("descricaoTarefa").value = "";
+      document.getElementById("setorTarefa").value = "";
+      document.getElementById("prioridadeTarefa").value = "";
+    }
+  </script>
+</body>
+</html>

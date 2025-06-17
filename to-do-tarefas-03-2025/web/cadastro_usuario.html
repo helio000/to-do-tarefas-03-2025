@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="top-bar">
+    <h1>Cadastro de Usuário</h1>
+    <div id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="cadastro_tarefa.html">Cadastro de Tarefas</a>
+      <a href="gerenciar_tarefas.html">Gerenciar Tarefas</a>
+    </div>
+  </div>
+
+  <div class="add-task">
+    <input type="text" id="nome" placeholder="Nome do Usuário">
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="text" id="setorUsuario" placeholder="Setor">
+    <button onclick="cadastrarUsuario()">Cadastrar</button>
+  </div>
+
+  <script>
+    function cadastrarUsuario() {
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const setor = document.getElementById("setorUsuario").value.trim();
+
+      if (!nome || !email || !setor) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+
+      document.getElementById("nome").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("setorUsuario").value = "";
+    }
+  </script>
+</body>
+</html>
